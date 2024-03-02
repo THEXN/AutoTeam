@@ -12,9 +12,9 @@ namespace autoteam
         [JsonProperty("组的队伍")]
         public Dictionary<string, string> GroupTeamMap { get; set; } = new Dictionary<string, string>
         {
-            { "组名字", "队伍名称中文或英文" },
-            { "default", "红队" },
-            { "亲爱的", "red" },
+            { "组名字/groupname", "队伍名称teamname中文或English" },
+            { "default", "red" },
+            { "某个组", "红队" },
             // 添加更多默认映射关系...
         };
         [JsonProperty("开启插件")]
@@ -26,7 +26,7 @@ namespace autoteam
             if (GroupTeamMap.ContainsKey(groupName))
                 return GroupTeamMap[groupName];
             else
-                return "none"; // 默认返回"无队伍"
+                return "无队伍"; // 默认返回"无队伍"
         }
 
 
